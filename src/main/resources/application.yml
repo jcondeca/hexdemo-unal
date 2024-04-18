@@ -1,0 +1,31 @@
+server:
+  port: 8081
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/
+      database: hexdemo
+  jpa:
+    open-in-view: false
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    url: jdbc:postgresql://localhost:5432/hexdemo
+    username: jcondeca
+    password:
+    driver-class-name: org.postgresql.Driver
+  sql:
+    init:
+      mode: always
+  flyway:
+    locations: classpath:db/migration/
+    baselineOnMigrate: true
+    baselineVersion: 1
+    sqlMigrationPrefix: DB_HEXDEMO_V
+    schemas: public
+    table: flyway_hexdemo_schema_version
+    validateMigrationNaming: true

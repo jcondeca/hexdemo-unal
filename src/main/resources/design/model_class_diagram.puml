@@ -1,0 +1,36 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class User {
+    + UUID id
+    + String name
+    + String email
+    + Double maxOrderPrice
+}
+
+class Product {
+    + UUID id
+    + String name
+    + Double price
+}
+
+class Order {
+    + UUID id
+    + UUID userId
+    + List<Product> products
+    + Double totalPrice
+}
+
+class OrderItem {
+    + UUID id
+    + UUID orderId
+    + UUID productId
+    + Integer quantity
+    + Double getTotalPrice()
+}
+
+Order "1" *-- "1..*" OrderItem
+Order "*" --> "1" User
+OrderItem "*" --> "1" Product
+
+@enduml
