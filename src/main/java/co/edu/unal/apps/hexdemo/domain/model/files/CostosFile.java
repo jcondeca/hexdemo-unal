@@ -7,8 +7,11 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Data
 @AllArgsConstructor
 public class CostosFile {
     public String name;
+
+    public CostosFile() {
+
+    }
 }

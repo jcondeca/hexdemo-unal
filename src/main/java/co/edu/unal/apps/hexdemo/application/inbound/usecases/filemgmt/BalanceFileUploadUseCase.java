@@ -11,7 +11,6 @@ public class BalanceFileUploadUseCase extends FileUploadUseCase {
             this.fileUploaderService = new FileUploaderService();
         }
 
-        @Override
         public void uploadFile( CostosFile file ) {
             CostosFile costosFile = new CostosFile();
             costosFile.setName(file.getName());
